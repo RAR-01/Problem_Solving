@@ -1,23 +1,26 @@
 #include<bits/stdc++.h>
 using namespace std;
 
-int main(){
-    
-    int n;
-    cin >> n;
+int main() {
+
+    int r, unit;
+    cin >> r >> unit;
     cin.ignore();
 
     string s;
-    getline(cin,s);
+    getline(cin, s);
 
     string num = "";
     vector<int> arr;
 
-    for(char c: s){
+    for(char c : s){
+
         if(isdigit(c) || c == '-'){
             num += c;
         }
-        else {
+
+        else{
+
             if(!num.empty()){
                 arr.push_back(stoi(num));
                 num = "";
@@ -29,21 +32,25 @@ int main(){
         arr.push_back(stoi(num));
     }
 
-    int p;
-    cin >> p;
+    if(arr.empty()){
+        cout << -1;
+        return 0;
+    }
 
-    for(int i = 1; i <= n; i++){
-        int count = 0;
+    int requiredFood = r * unit;
+    int sum = 0;
 
-        for(int j = 0; j < arr.size(); j++){
-            if(arr[j] == i){
-                count++;
-            }
+    for(int i = 0; i < arr.size(); i++){
+
+        sum += arr[i];
+
+        if(sum >= requiredFood){
+            cout << i + 1;
+            return 0;
         }
-        arr[i] = count;
     }
-    for(int x : arr){
-        cout << x;
-    }
+
+    cout << 0;
+
     return 0;
 }
