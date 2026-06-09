@@ -15,3 +15,18 @@ public:
         return ans;
     }
 };
+
+// Below approach gives TLE
+// int best = 0;
+// int n = nums.size();
+// for (int i = 0; i < n; i++) {
+//     int mx = nums[i];
+//     int mn = nums[i];
+
+//     for (int j = i; j < n; j++) {
+//         mx = max(mx, nums[j]);
+//         mn = min(mn, nums[j]);
+
+//         best = max(best, mx - mn);
+//     }
+// }
