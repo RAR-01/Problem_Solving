@@ -1,6 +1,8 @@
 #include<bits/stdc++.h>
 using namespace std;
 
+
+//first intuition
 class Solution {
 public:
     int largestAltitude(vector<int>& gain) {
@@ -18,5 +20,23 @@ public:
             maxVal = 0;
         }
         return maxVal;
+    }
+};
+
+// actual intution
+
+class Solution {
+public:
+    int largestAltitude(vector<int>& gain) {
+        
+        int sum = 0;
+        int maxValue = 0;
+
+        for(auto x : gain){
+            sum += x;
+            maxValue = max(sum, maxValue);
+        }
+
+        return maxValue;
     }
 };
