@@ -2,7 +2,7 @@
 using namespace std;
 
 
-//first intuition
+//first intuion
 class Solution {
 public:
     int largestAltitude(vector<int>& gain) {
