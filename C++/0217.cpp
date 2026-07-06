@@ -46,7 +46,7 @@ public:
             if(seen.find(num) != seen.end()){
                 return true;
             }
-            seen.insert(anum);
+            seen.insert(num);
         }
         return false;
     }
